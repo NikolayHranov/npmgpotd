@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+}
+
+header {
+    background-color: #44895b;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.mtitle a {
+    color: white;
+    text-decoration: none;
+}
+
+.mtitle a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.pdf-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #44895b;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pdf-button:hover {
+    background-color: #386f57;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin: 0 1em;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+}
+
+.navbar a:hover {
+    background-color: #386f57;
+    border-radius: 4px;
+}
+
+main {
+    color: white;
+    padding: 1em;
+}
+
+section {
+    margin-bottom: 1em;
+}
+
+h2 {
+    color: #c5c0c5;
+}
+
+footer {
+    background-color: #44895b;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}

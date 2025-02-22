@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проблемие на деня</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-script src="script.py"></py-script> -->
+    <script>
+        function getTodayLink(theme) {
+            const today = new Date().toISOString().split('T')[0]; // Get YYYY-MM-DD format
+            return `problems/${theme}/${today}.pdf`;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1 class="mtitle"><a href="index.html">НПМГ - Задачи на деня</a></h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="today.html">Задачи на деня</a></li>
+                <!-- <li><a href="physics.html">Физика</a></li>
+                <li><a href="astronomy.html">Астрономия</a></li>
+                <li><a href="math.html">Математика</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <a id="physics-today" class="pdf-button" target="_blank">Физика</a>
+        <a id="astronomy-today" class="pdf-button" target="_blank">Астрономия</a>
+        <a id="mathematics-today" class="pdf-button" target="_blank">Математика</a>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        document.getElementById('physics-today').href = getTodayLink('physics');
+        document.getElementById('mathematics-today').href = getTodayLink('mathematics');
+        document.getElementById('astronomy-today').href = getTodayLink('astronomy');
+    </script>
+</body>
+</html>
