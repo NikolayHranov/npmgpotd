@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-script src="script.py"></py-script> -->
+    <!-- <script>
+        async function getValidProblemLink(theme) {
+            const startDate = new Date("2025-02-22");
+            const today = new Date();
+            
+            async function checkFileExists(url) {
+                try {
+                    let response = await fetch(url, { method: 'HEAD' });
+                    console.log("Legit link:" + url)
+                    return response.ok;
+                } catch (error) {
+                    return false;
+                }
+            }
+
+            function getRandomDate() {
+                const randomTime = startDate.getTime() + Math.random() * (today.getTime() - startDate.getTime());
+                return new Date(randomTime).toISOString().split('T')[0]; // Convert to YYYY-MM-DD
+            }
+
+            let attempts = 0;
+            while (attempts < 10) { // Avoid infinite loops
+                const randomDate = getRandomDate();
+                const url = `problems/${theme}/${randomDate}.pdf`;
+
+                if (await checkFileExists(url)) {
+                    console.log(url)
+                    return url;
+                }
+                attempts++;
+            }
+
+            return "#"; // If no valid problem is found, return a placeholder link
+        }
+    </script> -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="mtitle"><a href="index.html">НПМГ - Задачи на деня</a></h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="today.html">Задачи на деня</a></li>
+                <li><a href="problems.html">Задачи</a></li>
+                <li><a href="contribute.html">Предложения</a></li>
+                <!-- <li><a href="physics.html">Физика</a></li>
+                <li><a href="astronomy.html">Астрономия</a></li>
+                <li><a href="math.html">Математика</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Случайна задача по:</h2>
+        <!-- <a id="physics-random" class="pdf-button" target="_blank">Физика</a>
+        <a id="astronomy-random" class="pdf-button" target="_blank">Астрономия</a>
+        <a id="mathematics-random" class="pdf-button" target="_blank">Математика</a> -->
+        <a href="#" onclick="getValidRandomProblem('physics')" class="pdf-button">Физика</a>
+        <a href="#" onclick="getValidRandomProblem('astronomy')" class="pdf-button">Астрономия</a>
+        <a href="#" onclick="getValidRandomProblem('mathematics')" class="pdf-button">Математика</a>
+        <br><br>
+        <a href="#" onclick="getRandomCategoryProblem()" class="pdf-button">Случайна задача</a>
+        <br><br>
+        <hr>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        // document.getElementById('physics-random').href = getValidProblemLink('physics');
+        // document.getElementById('mathematics-random').href = getValidProblemLink('mathematics');
+        // document.getElementById('astronomy-random').href = getValidProblemLink('astronomy');
+    </script>
+</body>
+</html>
