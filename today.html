@@ -7,40 +7,42 @@
     <link rel="stylesheet" href="styles.css">
     <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <py-script src="script.py"></py-script> -->
+    <script src="script.js"></script>
     <script>
+        // console.log("Hello?!")
         function getTodayLink(theme) {
             const today = new Date().toISOString().split('T')[0]; // Get YYYY-MM-DD format
+            console.log(`problems/${theme}/${today}.pdf`)
             return `problems/${theme}/${today}.pdf`;
         }
     </script>
 </head>
 <body>
-    <header>
-        <h1 class="mtitle"><a href="index.html">НПМГ - Задачи на деня</a></h1>
-        <nav class="navbar">
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="today.html">Задачи на деня</a></li>
-                <li><a href="problems.html">Задачи</a></li>
-                <li><a href="contribute.html">Предложения</a></li>
-                <!-- <li><a href="physics.html">Физика</a></li>
-                <li><a href="astronomy.html">Астрономия</a></li>
-                <li><a href="math.html">Математика</a></li> -->
-            </ul>
-        </nav>
-    </header>
+    <div id="site-header"></div>
     <main>
+        <h2>Задачи на деня</h2>
         <a id="physics-today" class="pdf-button" target="_blank">Физика</a>
         <a id="astronomy-today" class="pdf-button" target="_blank">Астрономия</a>
         <a id="mathematics-today" class="pdf-button" target="_blank">Математика</a>
-    </main>
-    <footer>
 
-    </footer>
+        <h2>Случайна задача по:</h2>
+        <!-- <a id="physics-random" class="pdf-button" target="_blank">Физика</a>
+        <a id="astronomy-random" class="pdf-button" target="_blank">Астрономия</a>
+        <a id="mathematics-random" class="pdf-button" target="_blank">Математика</a> -->
+        <a href="#" onclick="getValidRandomProblem('physics')" class="pdf-button">Физика</a>
+        <a href="#" onclick="getValidRandomProblem('astronomy')" class="pdf-button">Астрономия</a>
+        <a href="#" onclick="getValidRandomProblem('mathematics')" class="pdf-button">Математика</a>
+        <br><br>
+        <a href="#" onclick="getRandomCategoryProblem()" class="pdf-button">Случайна задача</a>
+        <br><br>
+        <hr>
+    </main>
+    <div id="site-footer"></div>
     <script>
         document.getElementById('physics-today').href = getTodayLink('physics');
         document.getElementById('mathematics-today').href = getTodayLink('mathematics');
         document.getElementById('astronomy-today').href = getTodayLink('astronomy');
     </script>
+    <script src="load.js"></script>
 </body>
 </html>

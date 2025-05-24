@@ -1,3 +1,9 @@
+function getTodayLink(theme) {
+    const today = new Date().toISOString().split('T')[0]; // Get YYYY-MM-DD format
+    console.log(`problems/${theme}/${today}.pdf`)
+    return `problems/${theme}/${today}.pdf`;
+}
+
 async function getValidRandomProblem(theme) {
     const startDate = new Date("2025-02-22");
     const today = new Date();
