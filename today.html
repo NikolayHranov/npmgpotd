@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проблемие на деня</title>
+    <title>Проблеми на деня</title>
     <link rel="stylesheet" href="styles.css">
     <!-- <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <py-script src="script.py"></py-script> -->
-    <script src="script.js"></script>
     <script>
         // console.log("Hello?!")
         function getTodayLink(theme) {
@@ -18,6 +17,7 @@
     </script>
 </head>
 <body>
+    <script src="script.js"></script>
     <div id="site-header"></div>
     <main>
         <h2>Задачи на деня</h2>
@@ -29,16 +29,24 @@
         <!-- <a id="physics-random" class="pdf-button" target="_blank">Физика</a>
         <a id="astronomy-random" class="pdf-button" target="_blank">Астрономия</a>
         <a id="mathematics-random" class="pdf-button" target="_blank">Математика</a> -->
-        <a href="#" onclick="getValidRandomProblem('physics')" class="pdf-button">Физика</a>
-        <a href="#" onclick="getValidRandomProblem('astronomy')" class="pdf-button">Астрономия</a>
-        <a href="#" onclick="getValidRandomProblem('mathematics')" class="pdf-button">Математика</a>
+        <a href="#" onclick="getProblem('physics')" class="pdf-button">Физика</a>
+        <a href="#" onclick="getProblem('astronomy')" class="pdf-button">Астрономия</a>
+        <a href="#" onclick="getProblem('mathematics')" class="pdf-button">Математика</a>
         <br><br>
         <a href="#" onclick="getRandomCategoryProblem()" class="pdf-button">Случайна задача</a>
         <br><br>
         <hr>
+
+        <div id="problems-section">
+            <h2>Задачи</h2>
+            <ul id="problems-list"></ul>
+        </div>
+
     </main>
     <div id="site-footer"></div>
     <script>
+        console.log("Loading items...")
+        loadAllProblems(["mathematics", "physics", "astronomy"], "problems-list");
         document.getElementById('physics-today').href = getTodayLink('physics');
         document.getElementById('mathematics-today').href = getTodayLink('mathematics');
         document.getElementById('astronomy-today').href = getTodayLink('astronomy');

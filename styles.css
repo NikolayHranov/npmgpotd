@@ -149,3 +149,7 @@ footer a {
     font-size: 0.9em;
     color: #aaa;
 }
+
+.problems-list {
+    list-style: none;
+}
